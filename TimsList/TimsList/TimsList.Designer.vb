@@ -44,8 +44,15 @@ Partial Class frmTimsList
         Me.lblItemType = New System.Windows.Forms.Label()
         Me.lblItemDescription = New System.Windows.Forms.Label()
         Me.lblItemPrice = New System.Windows.Forms.Label()
+        Me.pnlAd = New System.Windows.Forms.Panel()
+        Me.rtbAdText = New System.Windows.Forms.RichTextBox()
+        Me.picAdPicture = New System.Windows.Forms.PictureBox()
+        Me.lblAdItem = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.picDoggie, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
+        Me.pnlAd.SuspendLayout()
+        CType(Me.picAdPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picDoggie
@@ -77,7 +84,7 @@ Partial Class frmTimsList
         Me.lstItems.ItemHeight = 16
         Me.lstItems.Location = New System.Drawing.Point(12, 175)
         Me.lstItems.Name = "lstItems"
-        Me.lstItems.Size = New System.Drawing.Size(994, 516)
+        Me.lstItems.Size = New System.Drawing.Size(994, 548)
         Me.lstItems.TabIndex = 2
         '
         'cmbCategorySelect
@@ -217,7 +224,7 @@ Partial Class frmTimsList
         Me.lvwTest.Location = New System.Drawing.Point(12, 239)
         Me.lvwTest.MultiSelect = False
         Me.lvwTest.Name = "lvwTest"
-        Me.lvwTest.Size = New System.Drawing.Size(994, 364)
+        Me.lvwTest.Size = New System.Drawing.Size(994, 416)
         Me.lvwTest.TabIndex = 21
         Me.lvwTest.UseCompatibleStateImageBehavior = False
         Me.lvwTest.View = System.Windows.Forms.View.Details
@@ -258,10 +265,59 @@ Partial Class frmTimsList
         Me.lblItemPrice.TabIndex = 25
         Me.lblItemPrice.Text = "Price"
         '
+        'pnlAd
+        '
+        Me.pnlAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAd.Controls.Add(Me.LinkLabel1)
+        Me.pnlAd.Controls.Add(Me.lblAdItem)
+        Me.pnlAd.Controls.Add(Me.picAdPicture)
+        Me.pnlAd.Controls.Add(Me.rtbAdText)
+        Me.pnlAd.Location = New System.Drawing.Point(511, 305)
+        Me.pnlAd.Name = "pnlAd"
+        Me.pnlAd.Size = New System.Drawing.Size(476, 408)
+        Me.pnlAd.TabIndex = 26
+        '
+        'rtbAdText
+        '
+        Me.rtbAdText.Location = New System.Drawing.Point(30, 177)
+        Me.rtbAdText.Name = "rtbAdText"
+        Me.rtbAdText.Size = New System.Drawing.Size(429, 222)
+        Me.rtbAdText.TabIndex = 0
+        Me.rtbAdText.Text = ""
+        '
+        'picAdPicture
+        '
+        Me.picAdPicture.Location = New System.Drawing.Point(30, 48)
+        Me.picAdPicture.Name = "picAdPicture"
+        Me.picAdPicture.Size = New System.Drawing.Size(140, 123)
+        Me.picAdPicture.TabIndex = 1
+        Me.picAdPicture.TabStop = False
+        '
+        'lblAdItem
+        '
+        Me.lblAdItem.AutoSize = True
+        Me.lblAdItem.Font = New System.Drawing.Font("Arial Black", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdItem.Location = New System.Drawing.Point(34, 0)
+        Me.lblAdItem.Name = "lblAdItem"
+        Me.lblAdItem.Size = New System.Drawing.Size(136, 45)
+        Me.lblAdItem.TabIndex = 2
+        Me.lblAdItem.Text = "Label1"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(400, 15)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
+        Me.LinkLabel1.TabIndex = 3
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "LinkLabel1"
+        '
         'frmTimsList
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1018, 744)
+        Me.Controls.Add(Me.pnlAd)
         Me.Controls.Add(Me.lblItemPrice)
         Me.Controls.Add(Me.lblItemDescription)
         Me.Controls.Add(Me.lblItemType)
@@ -278,6 +334,9 @@ Partial Class frmTimsList
         CType(Me.picDoggie, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlSearch.ResumeLayout(False)
         Me.pnlSearch.PerformLayout()
+        Me.pnlAd.ResumeLayout(False)
+        Me.pnlAd.PerformLayout()
+        CType(Me.picAdPicture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -303,5 +362,10 @@ Partial Class frmTimsList
     Friend WithEvents lblItemType As System.Windows.Forms.Label
     Friend WithEvents lblItemDescription As System.Windows.Forms.Label
     Friend WithEvents lblItemPrice As System.Windows.Forms.Label
+    Friend WithEvents pnlAd As System.Windows.Forms.Panel
+    Friend WithEvents lblAdItem As System.Windows.Forms.Label
+    Friend WithEvents picAdPicture As System.Windows.Forms.PictureBox
+    Friend WithEvents rtbAdText As System.Windows.Forms.RichTextBox
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 
 End Class

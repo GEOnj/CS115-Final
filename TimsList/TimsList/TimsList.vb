@@ -22,6 +22,8 @@
 Option Strict On
 Option Explicit On
 
+Imports System.IO
+
 Public Class frmTimsList
 
     Private Sub TimsList_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -53,6 +55,15 @@ Public Class frmTimsList
         item2.SubItems.Add(Chr(36) & "20000.00")
 
         lvwTest.Items.Add(item2)
+
+        'Test Data for pnlAd
+
+        lblAdItem.Text = "Alienware MX11"
+        picAdPicture.Image = Image.FromFile("../../My Project/DataFiles/lienware.jpg")
+        picAdPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        'FileOpen(1, "../../My Project/DataFiles/lienware.tlf", OpenMode.Input)
+        rtbAdText.Text = File.ReadAllText("../../My Project/DataFiles/lienware.tlf")
+        'FileClose(1)
 
     End Sub
 
