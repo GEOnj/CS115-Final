@@ -28,28 +28,22 @@ Public Class frmTimsList
 
     Private Sub TimsList_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Test data to add into lstItems
-        lstItems.Items.Add("        AlienWare M11x      Laptop(Computers)   High-end gaming computer at a discount.                               $775  ")
-
         'Test Setup for List View Columns.
         ' ...Add(Description as String, Width in Pixels, Alignment)
-        lvwTest.Columns.Add("Picture", 80, HorizontalAlignment.Center)
         lvwTest.Columns.Add("Item Name", 150, HorizontalAlignment.Left)
         lvwTest.Columns.Add("Category", 130, HorizontalAlignment.Center)
         lvwTest.Columns.Add("Short Description", 500, HorizontalAlignment.Left)
         lvwTest.Columns.Add("Price", 70, HorizontalAlignment.Left)
 
 
-        Dim item1 As New ListViewItem("Picture", 0)
-        item1.SubItems.Add("Alienware MX11")
+        Dim item1 As New ListViewItem("Alienware MX11", 0)
         item1.SubItems.Add("Laptop (Computers)")
         item1.SubItems.Add("High-end gaming computer at a discount.")
         item1.SubItems.Add(Chr(36) & "775.00")
 
         lvwTest.Items.Add(item1)
 
-        Dim item2 As New ListViewItem("pic", 1)
-        item2.SubItems.Add("Ford Model T")
+        Dim item2 As New ListViewItem("Ford Model T", 1)
         item2.SubItems.Add("Automobiles")
         item2.SubItems.Add("The original mass-produced motor vehicle!")
         item2.SubItems.Add(Chr(36) & "20000.00")

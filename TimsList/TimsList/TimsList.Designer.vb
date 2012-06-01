@@ -25,7 +25,6 @@ Partial Class frmTimsList
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTimsList))
         Me.picDoggie = New System.Windows.Forms.PictureBox()
         Me.lblTimsList = New System.Windows.Forms.Label()
-        Me.lstItems = New System.Windows.Forms.ListBox()
         Me.cmbCategorySelect = New System.Windows.Forms.ComboBox()
         Me.lblCategorySelect = New System.Windows.Forms.Label()
         Me.txtMin = New System.Windows.Forms.TextBox()
@@ -40,15 +39,12 @@ Partial Class frmTimsList
         Me.pnlSearch = New System.Windows.Forms.Panel()
         Me.rtbTest = New System.Windows.Forms.RichTextBox()
         Me.lvwTest = New System.Windows.Forms.ListView()
-        Me.lblItemName = New System.Windows.Forms.Label()
-        Me.lblItemType = New System.Windows.Forms.Label()
-        Me.lblItemDescription = New System.Windows.Forms.Label()
-        Me.lblItemPrice = New System.Windows.Forms.Label()
         Me.pnlAd = New System.Windows.Forms.Panel()
-        Me.rtbAdText = New System.Windows.Forms.RichTextBox()
-        Me.picAdPicture = New System.Windows.Forms.PictureBox()
-        Me.lblAdItem = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lblAdItem = New System.Windows.Forms.Label()
+        Me.picAdPicture = New System.Windows.Forms.PictureBox()
+        Me.rtbAdText = New System.Windows.Forms.RichTextBox()
+        Me.cmbSortOrder = New System.Windows.Forms.ComboBox()
         CType(Me.picDoggie, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
         Me.pnlAd.SuspendLayout()
@@ -75,17 +71,6 @@ Partial Class frmTimsList
         Me.lblTimsList.Size = New System.Drawing.Size(158, 45)
         Me.lblTimsList.TabIndex = 1
         Me.lblTimsList.Text = "Tim's List"
-        '
-        'lstItems
-        '
-        Me.lstItems.BackColor = System.Drawing.Color.LightPink
-        Me.lstItems.Font = New System.Drawing.Font("Courier New", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstItems.FormattingEnabled = True
-        Me.lstItems.ItemHeight = 16
-        Me.lstItems.Location = New System.Drawing.Point(12, 175)
-        Me.lstItems.Name = "lstItems"
-        Me.lstItems.Size = New System.Drawing.Size(994, 548)
-        Me.lstItems.TabIndex = 2
         '
         'cmbCategorySelect
         '
@@ -188,6 +173,7 @@ Partial Class frmTimsList
         '
         Me.pnlSearch.BackColor = System.Drawing.Color.DarkTurquoise
         Me.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSearch.Controls.Add(Me.cmbSortOrder)
         Me.pnlSearch.Controls.Add(Me.cmbCategorySelect)
         Me.pnlSearch.Controls.Add(Me.btnClear)
         Me.pnlSearch.Controls.Add(Me.lblCategorySelect)
@@ -201,7 +187,7 @@ Partial Class frmTimsList
         Me.pnlSearch.Controls.Add(Me.lblMax)
         Me.pnlSearch.Location = New System.Drawing.Point(12, 64)
         Me.pnlSearch.Name = "pnlSearch"
-        Me.pnlSearch.Size = New System.Drawing.Size(994, 55)
+        Me.pnlSearch.Size = New System.Drawing.Size(994, 93)
         Me.pnlSearch.TabIndex = 14
         '
         'rtbTest
@@ -218,52 +204,17 @@ Partial Class frmTimsList
         'lvwTest
         '
         Me.lvwTest.BackColor = System.Drawing.Color.Bisque
+        Me.lvwTest.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvwTest.FullRowSelect = True
         Me.lvwTest.GridLines = True
         Me.lvwTest.LabelWrap = False
-        Me.lvwTest.Location = New System.Drawing.Point(12, 239)
+        Me.lvwTest.Location = New System.Drawing.Point(12, 199)
         Me.lvwTest.MultiSelect = False
         Me.lvwTest.Name = "lvwTest"
-        Me.lvwTest.Size = New System.Drawing.Size(994, 416)
+        Me.lvwTest.Size = New System.Drawing.Size(994, 456)
         Me.lvwTest.TabIndex = 21
         Me.lvwTest.UseCompatibleStateImageBehavior = False
         Me.lvwTest.View = System.Windows.Forms.View.Details
-        '
-        'lblItemName
-        '
-        Me.lblItemName.AutoSize = True
-        Me.lblItemName.Location = New System.Drawing.Point(92, 156)
-        Me.lblItemName.Name = "lblItemName"
-        Me.lblItemName.Size = New System.Drawing.Size(27, 13)
-        Me.lblItemName.TabIndex = 22
-        Me.lblItemName.Text = "Item"
-        '
-        'lblItemType
-        '
-        Me.lblItemType.AutoSize = True
-        Me.lblItemType.Location = New System.Drawing.Point(271, 156)
-        Me.lblItemType.Name = "lblItemType"
-        Me.lblItemType.Size = New System.Drawing.Size(66, 13)
-        Me.lblItemType.TabIndex = 23
-        Me.lblItemType.Text = "Type of Item"
-        '
-        'lblItemDescription
-        '
-        Me.lblItemDescription.AutoSize = True
-        Me.lblItemDescription.Location = New System.Drawing.Point(400, 156)
-        Me.lblItemDescription.Name = "lblItemDescription"
-        Me.lblItemDescription.Size = New System.Drawing.Size(88, 13)
-        Me.lblItemDescription.TabIndex = 24
-        Me.lblItemDescription.Text = "Short Description"
-        '
-        'lblItemPrice
-        '
-        Me.lblItemPrice.AutoSize = True
-        Me.lblItemPrice.Location = New System.Drawing.Point(956, 156)
-        Me.lblItemPrice.Name = "lblItemPrice"
-        Me.lblItemPrice.Size = New System.Drawing.Size(31, 13)
-        Me.lblItemPrice.TabIndex = 25
-        Me.lblItemPrice.Text = "Price"
         '
         'pnlAd
         '
@@ -277,21 +228,15 @@ Partial Class frmTimsList
         Me.pnlAd.Size = New System.Drawing.Size(476, 408)
         Me.pnlAd.TabIndex = 26
         '
-        'rtbAdText
+        'LinkLabel1
         '
-        Me.rtbAdText.Location = New System.Drawing.Point(30, 177)
-        Me.rtbAdText.Name = "rtbAdText"
-        Me.rtbAdText.Size = New System.Drawing.Size(429, 222)
-        Me.rtbAdText.TabIndex = 0
-        Me.rtbAdText.Text = ""
-        '
-        'picAdPicture
-        '
-        Me.picAdPicture.Location = New System.Drawing.Point(30, 48)
-        Me.picAdPicture.Name = "picAdPicture"
-        Me.picAdPicture.Size = New System.Drawing.Size(140, 123)
-        Me.picAdPicture.TabIndex = 1
-        Me.picAdPicture.TabStop = False
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(400, 15)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
+        Me.LinkLabel1.TabIndex = 3
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "LinkLabel1"
         '
         'lblAdItem
         '
@@ -303,29 +248,38 @@ Partial Class frmTimsList
         Me.lblAdItem.TabIndex = 2
         Me.lblAdItem.Text = "Label1"
         '
-        'LinkLabel1
+        'picAdPicture
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(400, 15)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
-        Me.LinkLabel1.TabIndex = 3
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "LinkLabel1"
+        Me.picAdPicture.Location = New System.Drawing.Point(30, 48)
+        Me.picAdPicture.Name = "picAdPicture"
+        Me.picAdPicture.Size = New System.Drawing.Size(140, 123)
+        Me.picAdPicture.TabIndex = 1
+        Me.picAdPicture.TabStop = False
+        '
+        'rtbAdText
+        '
+        Me.rtbAdText.Location = New System.Drawing.Point(30, 177)
+        Me.rtbAdText.Name = "rtbAdText"
+        Me.rtbAdText.Size = New System.Drawing.Size(429, 222)
+        Me.rtbAdText.TabIndex = 0
+        Me.rtbAdText.Text = ""
+        '
+        'cmbSortOrder
+        '
+        Me.cmbSortOrder.FormattingEnabled = True
+        Me.cmbSortOrder.Location = New System.Drawing.Point(695, 20)
+        Me.cmbSortOrder.Name = "cmbSortOrder"
+        Me.cmbSortOrder.Size = New System.Drawing.Size(188, 21)
+        Me.cmbSortOrder.TabIndex = 14
         '
         'frmTimsList
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1018, 744)
         Me.Controls.Add(Me.pnlAd)
-        Me.Controls.Add(Me.lblItemPrice)
-        Me.Controls.Add(Me.lblItemDescription)
-        Me.Controls.Add(Me.lblItemType)
-        Me.Controls.Add(Me.lblItemName)
         Me.Controls.Add(Me.rtbTest)
         Me.Controls.Add(Me.lvwTest)
         Me.Controls.Add(Me.pnlSearch)
-        Me.Controls.Add(Me.lstItems)
         Me.Controls.Add(Me.lblTimsList)
         Me.Controls.Add(Me.picDoggie)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -343,7 +297,6 @@ Partial Class frmTimsList
     End Sub
     Friend WithEvents picDoggie As System.Windows.Forms.PictureBox
     Friend WithEvents lblTimsList As System.Windows.Forms.Label
-    Friend WithEvents lstItems As System.Windows.Forms.ListBox
     Friend WithEvents cmbCategorySelect As System.Windows.Forms.ComboBox
     Friend WithEvents lblCategorySelect As System.Windows.Forms.Label
     Friend WithEvents txtMin As System.Windows.Forms.TextBox
@@ -358,14 +311,11 @@ Partial Class frmTimsList
     Friend WithEvents pnlSearch As System.Windows.Forms.Panel
     Friend WithEvents rtbTest As System.Windows.Forms.RichTextBox
     Friend WithEvents lvwTest As System.Windows.Forms.ListView
-    Friend WithEvents lblItemName As System.Windows.Forms.Label
-    Friend WithEvents lblItemType As System.Windows.Forms.Label
-    Friend WithEvents lblItemDescription As System.Windows.Forms.Label
-    Friend WithEvents lblItemPrice As System.Windows.Forms.Label
     Friend WithEvents pnlAd As System.Windows.Forms.Panel
     Friend WithEvents lblAdItem As System.Windows.Forms.Label
     Friend WithEvents picAdPicture As System.Windows.Forms.PictureBox
     Friend WithEvents rtbAdText As System.Windows.Forms.RichTextBox
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents cmbSortOrder As System.Windows.Forms.ComboBox
 
 End Class
