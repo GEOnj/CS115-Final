@@ -30,10 +30,10 @@ Public Class frmTimsList
 
         'Test Setup for List View Columns.
         ' ...Add(Description as String, Width in Pixels, Alignment)
-        lvwTest.Columns.Add("Item Name", 150, HorizontalAlignment.Left)
-        lvwTest.Columns.Add("Category", 130, HorizontalAlignment.Center)
+        lvwTest.Columns.Add("Item Name", 200, HorizontalAlignment.Left)
+        lvwTest.Columns.Add("Category", 150, HorizontalAlignment.Center)
         lvwTest.Columns.Add("Short Description", 500, HorizontalAlignment.Left)
-        lvwTest.Columns.Add("Price", 70, HorizontalAlignment.Left)
+        lvwTest.Columns.Add("Price", 90, HorizontalAlignment.Left)
 
 
         Dim item1 As New ListViewItem("Alienware MX11", 0)
@@ -55,6 +55,7 @@ Public Class frmTimsList
         lblAdItem.Text = "Alienware MX11"
         picAdPicture.Image = Image.FromFile("../../My Project/DataFiles/lienware.jpg")
         picAdPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+                picComputer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         'FileOpen(1, "../../My Project/DataFiles/lienware.tlf", OpenMode.Input)
         rtbAdText.Text = File.ReadAllText("../../My Project/DataFiles/lienware.tlf")
         'FileClose(1)
