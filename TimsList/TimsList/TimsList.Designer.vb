@@ -32,27 +32,27 @@ Partial Class frmTimsList
         Me.lblPriceRange = New System.Windows.Forms.Label()
         Me.lblDash = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.btnClearSearch = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.pnlSearch = New System.Windows.Forms.Panel()
         Me.lblSortBy = New System.Windows.Forms.Label()
         Me.cmbSortOrder = New System.Windows.Forms.ComboBox()
-        Me.rtbTest = New System.Windows.Forms.RichTextBox()
         Me.lvwList = New System.Windows.Forms.ListView()
         Me.pnlAd = New System.Windows.Forms.Panel()
         Me.pnlAdPicture = New System.Windows.Forms.Panel()
         Me.lblEnlargePic = New System.Windows.Forms.Label()
         Me.picAdPicture = New System.Windows.Forms.PictureBox()
+        Me.lblAdItem = New System.Windows.Forms.Label()
+        Me.llbBack = New System.Windows.Forms.LinkLabel()
         Me.lblTimsListVertClone4 = New System.Windows.Forms.Label()
         Me.lblTimsListVertClone3 = New System.Windows.Forms.Label()
         Me.lblTimsListVertClone2 = New System.Windows.Forms.Label()
         Me.lblTimsListVertClone = New System.Windows.Forms.Label()
         Me.lblAdCategory = New System.Windows.Forms.Label()
         Me.lblTimsListVert = New System.Windows.Forms.Label()
-        Me.llbBack = New System.Windows.Forms.LinkLabel()
-        Me.lblAdItem = New System.Windows.Forms.Label()
         Me.rtbAdText = New System.Windows.Forms.RichTextBox()
         Me.picComputer = New System.Windows.Forms.PictureBox()
         Me.lblTimsListOverlay = New System.Windows.Forms.Label()
+        Me.lblCreatedBy = New System.Windows.Forms.Label()
         CType(Me.picDoggie, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearch.SuspendLayout()
         Me.pnlAd.SuspendLayout()
@@ -87,6 +87,7 @@ Partial Class frmTimsList
         'cmbCategorySelect
         '
         Me.cmbCategorySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCategorySelect.ForeColor = System.Drawing.Color.Black
         Me.cmbCategorySelect.Items.AddRange(New Object() {"All Categories", "Automobiles", "Cellular Phones", "Farm/Garden", "Furniture", "Laptop Computers", "Sporting"})
         Me.cmbCategorySelect.Location = New System.Drawing.Point(58, 3)
         Me.cmbCategorySelect.Name = "cmbCategorySelect"
@@ -96,6 +97,7 @@ Partial Class frmTimsList
         'lblCategorySelect
         '
         Me.lblCategorySelect.AutoSize = True
+        Me.lblCategorySelect.ForeColor = System.Drawing.Color.Black
         Me.lblCategorySelect.Location = New System.Drawing.Point(3, 6)
         Me.lblCategorySelect.Name = "lblCategorySelect"
         Me.lblCategorySelect.Size = New System.Drawing.Size(52, 13)
@@ -106,6 +108,7 @@ Partial Class frmTimsList
         '
         Me.txtMin.ForeColor = System.Drawing.Color.DarkGray
         Me.txtMin.Location = New System.Drawing.Point(326, 6)
+        Me.txtMin.MaxLength = 7
         Me.txtMin.Name = "txtMin"
         Me.txtMin.Size = New System.Drawing.Size(72, 20)
         Me.txtMin.TabIndex = 5
@@ -115,6 +118,7 @@ Partial Class frmTimsList
         '
         Me.txtMax.ForeColor = System.Drawing.Color.DarkGray
         Me.txtMax.Location = New System.Drawing.Point(433, 6)
+        Me.txtMax.MaxLength = 7
         Me.txtMax.Name = "txtMax"
         Me.txtMax.Size = New System.Drawing.Size(71, 20)
         Me.txtMax.TabIndex = 6
@@ -123,6 +127,7 @@ Partial Class frmTimsList
         'lblPriceRange
         '
         Me.lblPriceRange.AutoSize = True
+        Me.lblPriceRange.ForeColor = System.Drawing.Color.Black
         Me.lblPriceRange.Location = New System.Drawing.Point(239, 9)
         Me.lblPriceRange.Name = "lblPriceRange"
         Me.lblPriceRange.Size = New System.Drawing.Size(81, 13)
@@ -132,6 +137,7 @@ Partial Class frmTimsList
         'lblDash
         '
         Me.lblDash.AutoSize = True
+        Me.lblDash.ForeColor = System.Drawing.Color.Black
         Me.lblDash.Location = New System.Drawing.Point(404, 9)
         Me.lblDash.Name = "lblDash"
         Me.lblDash.Size = New System.Drawing.Size(25, 13)
@@ -141,6 +147,7 @@ Partial Class frmTimsList
         'btnSearch
         '
         Me.btnSearch.BackColor = System.Drawing.Color.Lime
+        Me.btnSearch.ForeColor = System.Drawing.Color.Black
         Me.btnSearch.Location = New System.Drawing.Point(518, 4)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearch.Name = "btnSearch"
@@ -149,14 +156,15 @@ Partial Class frmTimsList
         Me.btnSearch.Text = "&Search"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
-        'btnClearSearch
+        'btnClear
         '
-        Me.btnClearSearch.Location = New System.Drawing.Point(599, 4)
-        Me.btnClearSearch.Name = "btnClearSearch"
-        Me.btnClearSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnClearSearch.TabIndex = 13
-        Me.btnClearSearch.Text = "&Clear Form"
-        Me.btnClearSearch.UseVisualStyleBackColor = True
+        Me.btnClear.ForeColor = System.Drawing.Color.Black
+        Me.btnClear.Location = New System.Drawing.Point(599, 4)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 13
+        Me.btnClear.Text = "&Clear Form"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
         'pnlSearch
         '
@@ -165,7 +173,7 @@ Partial Class frmTimsList
         Me.pnlSearch.Controls.Add(Me.lblSortBy)
         Me.pnlSearch.Controls.Add(Me.cmbSortOrder)
         Me.pnlSearch.Controls.Add(Me.cmbCategorySelect)
-        Me.pnlSearch.Controls.Add(Me.btnClearSearch)
+        Me.pnlSearch.Controls.Add(Me.btnClear)
         Me.pnlSearch.Controls.Add(Me.lblCategorySelect)
         Me.pnlSearch.Controls.Add(Me.btnSearch)
         Me.pnlSearch.Controls.Add(Me.txtMin)
@@ -180,6 +188,7 @@ Partial Class frmTimsList
         'lblSortBy
         '
         Me.lblSortBy.AutoSize = True
+        Me.lblSortBy.ForeColor = System.Drawing.Color.Black
         Me.lblSortBy.Location = New System.Drawing.Point(689, 9)
         Me.lblSortBy.Name = "lblSortBy"
         Me.lblSortBy.Size = New System.Drawing.Size(44, 13)
@@ -189,23 +198,13 @@ Partial Class frmTimsList
         'cmbSortOrder
         '
         Me.cmbSortOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSortOrder.ForeColor = System.Drawing.Color.Black
         Me.cmbSortOrder.FormattingEnabled = True
         Me.cmbSortOrder.Items.AddRange(New Object() {"Item Name (A-Z)", "Item Name (Z-A)", "Category (A-Z)", "Category (Z-A)", "Price (Low to High)", "Price (High to Low)"})
         Me.cmbSortOrder.Location = New System.Drawing.Point(739, 3)
         Me.cmbSortOrder.Name = "cmbSortOrder"
         Me.cmbSortOrder.Size = New System.Drawing.Size(151, 21)
         Me.cmbSortOrder.TabIndex = 14
-        '
-        'rtbTest
-        '
-        Me.rtbTest.BackColor = System.Drawing.Color.Orange
-        Me.rtbTest.Location = New System.Drawing.Point(438, 12)
-        Me.rtbTest.Name = "rtbTest"
-        Me.rtbTest.ReadOnly = True
-        Me.rtbTest.Size = New System.Drawing.Size(568, 43)
-        Me.rtbTest.TabIndex = 20
-        Me.rtbTest.Text = "Used to output different debugging information. Will not be included in final rel" & _
-            "ease. Or it could be turned into a scrolling marquee of our names :P"
         '
         'lvwList
         '
@@ -230,6 +229,7 @@ Partial Class frmTimsList
         Me.pnlAd.BackColor = System.Drawing.Color.Chartreuse
         Me.pnlAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlAd.Controls.Add(Me.pnlAdPicture)
+        Me.pnlAd.Controls.Add(Me.lblAdItem)
         Me.pnlAd.Controls.Add(Me.llbBack)
         Me.pnlAd.Controls.Add(Me.lblTimsListVertClone4)
         Me.pnlAd.Controls.Add(Me.lblTimsListVertClone3)
@@ -237,7 +237,6 @@ Partial Class frmTimsList
         Me.pnlAd.Controls.Add(Me.lblTimsListVertClone)
         Me.pnlAd.Controls.Add(Me.lblAdCategory)
         Me.pnlAd.Controls.Add(Me.lblTimsListVert)
-        Me.pnlAd.Controls.Add(Me.lblAdItem)
         Me.pnlAd.Controls.Add(Me.rtbAdText)
         Me.pnlAd.Location = New System.Drawing.Point(97, 225)
         Me.pnlAd.Name = "pnlAd"
@@ -273,12 +272,36 @@ Partial Class frmTimsList
         Me.picAdPicture.TabIndex = 1
         Me.picAdPicture.TabStop = False
         '
+        'lblAdItem
+        '
+        Me.lblAdItem.AutoSize = True
+        Me.lblAdItem.BackColor = System.Drawing.Color.Transparent
+        Me.lblAdItem.Font = New System.Drawing.Font("Arial Black", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdItem.Location = New System.Drawing.Point(3, 0)
+        Me.lblAdItem.Name = "lblAdItem"
+        Me.lblAdItem.Size = New System.Drawing.Size(297, 45)
+        Me.lblAdItem.TabIndex = 2
+        Me.lblAdItem.Text = "Temporary Text"
+        '
+        'llbBack
+        '
+        Me.llbBack.AutoSize = True
+        Me.llbBack.BackColor = System.Drawing.Color.Transparent
+        Me.llbBack.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbBack.LinkColor = System.Drawing.Color.Blue
+        Me.llbBack.Location = New System.Drawing.Point(621, 19)
+        Me.llbBack.Name = "llbBack"
+        Me.llbBack.Size = New System.Drawing.Size(87, 23)
+        Me.llbBack.TabIndex = 3
+        Me.llbBack.TabStop = True
+        Me.llbBack.Text = "<<- Back"
+        '
         'lblTimsListVertClone4
         '
         Me.lblTimsListVertClone4.BackColor = System.Drawing.Color.Transparent
         Me.lblTimsListVertClone4.Font = New System.Drawing.Font("Arial Black", 32.0!)
         Me.lblTimsListVertClone4.ForeColor = System.Drawing.Color.White
-        Me.lblTimsListVertClone4.Location = New System.Drawing.Point(513, -60)
+        Me.lblTimsListVertClone4.Location = New System.Drawing.Point(538, -60)
         Me.lblTimsListVertClone4.Name = "lblTimsListVertClone4"
         Me.lblTimsListVertClone4.Size = New System.Drawing.Size(53, 522)
         Me.lblTimsListVertClone4.TabIndex = 9
@@ -290,7 +313,7 @@ Partial Class frmTimsList
         Me.lblTimsListVertClone3.BackColor = System.Drawing.Color.Transparent
         Me.lblTimsListVertClone3.Font = New System.Drawing.Font("Arial Black", 32.0!)
         Me.lblTimsListVertClone3.ForeColor = System.Drawing.Color.Black
-        Me.lblTimsListVertClone3.Location = New System.Drawing.Point(572, -44)
+        Me.lblTimsListVertClone3.Location = New System.Drawing.Point(597, -46)
         Me.lblTimsListVertClone3.Name = "lblTimsListVertClone3"
         Me.lblTimsListVertClone3.Size = New System.Drawing.Size(53, 522)
         Me.lblTimsListVertClone3.TabIndex = 8
@@ -302,7 +325,7 @@ Partial Class frmTimsList
         Me.lblTimsListVertClone2.BackColor = System.Drawing.Color.Transparent
         Me.lblTimsListVertClone2.Font = New System.Drawing.Font("Arial Black", 32.0!)
         Me.lblTimsListVertClone2.ForeColor = System.Drawing.Color.Black
-        Me.lblTimsListVertClone2.Location = New System.Drawing.Point(644, -60)
+        Me.lblTimsListVertClone2.Location = New System.Drawing.Point(701, -60)
         Me.lblTimsListVertClone2.Name = "lblTimsListVertClone2"
         Me.lblTimsListVertClone2.Size = New System.Drawing.Size(53, 522)
         Me.lblTimsListVertClone2.TabIndex = 7
@@ -339,34 +362,10 @@ Partial Class frmTimsList
         Me.lblTimsListVert.ForeColor = System.Drawing.Color.Black
         Me.lblTimsListVert.Location = New System.Drawing.Point(851, -84)
         Me.lblTimsListVert.Name = "lblTimsListVert"
-        Me.lblTimsListVert.Size = New System.Drawing.Size(53, 522)
+        Me.lblTimsListVert.Size = New System.Drawing.Size(53, 481)
         Me.lblTimsListVert.TabIndex = 4
         Me.lblTimsListVert.Text = "TIMSLIST"
         Me.lblTimsListVert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'llbBack
-        '
-        Me.llbBack.AutoSize = True
-        Me.llbBack.BackColor = System.Drawing.Color.Transparent
-        Me.llbBack.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.llbBack.LinkColor = System.Drawing.Color.Blue
-        Me.llbBack.Location = New System.Drawing.Point(621, 19)
-        Me.llbBack.Name = "llbBack"
-        Me.llbBack.Size = New System.Drawing.Size(87, 23)
-        Me.llbBack.TabIndex = 3
-        Me.llbBack.TabStop = True
-        Me.llbBack.Text = "<<- Back"
-        '
-        'lblAdItem
-        '
-        Me.lblAdItem.AutoSize = True
-        Me.lblAdItem.BackColor = System.Drawing.Color.Transparent
-        Me.lblAdItem.Font = New System.Drawing.Font("Arial Black", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdItem.Location = New System.Drawing.Point(3, 0)
-        Me.lblAdItem.Name = "lblAdItem"
-        Me.lblAdItem.Size = New System.Drawing.Size(297, 45)
-        Me.lblAdItem.TabIndex = 2
-        Me.lblAdItem.Text = "Temporary Text"
         '
         'rtbAdText
         '
@@ -400,15 +399,27 @@ Partial Class frmTimsList
         Me.lblTimsListOverlay.TabIndex = 28
         Me.lblTimsListOverlay.Text = "Tim's List"
         '
+        'lblCreatedBy
+        '
+        Me.lblCreatedBy.AutoSize = True
+        Me.lblCreatedBy.BackColor = System.Drawing.Color.Transparent
+        Me.lblCreatedBy.Font = New System.Drawing.Font("Verdana", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCreatedBy.Location = New System.Drawing.Point(244, -3)
+        Me.lblCreatedBy.Name = "lblCreatedBy"
+        Me.lblCreatedBy.Size = New System.Drawing.Size(562, 12)
+        Me.lblCreatedBy.TabIndex = 29
+        Me.lblCreatedBy.Text = "Created By: Andrew Ruiz, Jovanni Navia, Tye Tinsley, Chentel Smith -- CS115 Secti" & _
+            "on A, Spring Quarter 2012"
+        '
         'frmTimsList
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1018, 676)
-        Me.Controls.Add(Me.picComputer)
         Me.Controls.Add(Me.pnlAd)
-        Me.Controls.Add(Me.rtbTest)
+        Me.Controls.Add(Me.lblCreatedBy)
+        Me.Controls.Add(Me.picComputer)
         Me.Controls.Add(Me.lvwList)
         Me.Controls.Add(Me.pnlSearch)
         Me.Controls.Add(Me.lblTimsList)
@@ -441,9 +452,8 @@ Partial Class frmTimsList
     Friend WithEvents lblPriceRange As System.Windows.Forms.Label
     Friend WithEvents lblDash As System.Windows.Forms.Label
     Friend WithEvents btnSearch As System.Windows.Forms.Button
-    Friend WithEvents btnClearSearch As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents pnlSearch As System.Windows.Forms.Panel
-    Friend WithEvents rtbTest As System.Windows.Forms.RichTextBox
     Friend WithEvents lvwList As System.Windows.Forms.ListView
     Friend WithEvents pnlAd As System.Windows.Forms.Panel
     Friend WithEvents lblAdItem As System.Windows.Forms.Label
@@ -462,5 +472,6 @@ Partial Class frmTimsList
     Friend WithEvents rtbAdText As System.Windows.Forms.RichTextBox
     Friend WithEvents pnlAdPicture As System.Windows.Forms.Panel
     Friend WithEvents lblEnlargePic As System.Windows.Forms.Label
+    Friend WithEvents lblCreatedBy As System.Windows.Forms.Label
 
 End Class
